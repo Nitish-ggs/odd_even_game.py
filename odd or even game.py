@@ -28,9 +28,10 @@ if (toss == "even" and ((comp_toss+toss_toss)%2 == 0)) or (toss == "odd" and ((c
                 print(f"Total score is {score_user} and wickets remaining is {wicket_comp}")
 
         print(f"Final score of first innings is {score_user} and onto the next innings where target is", score_user +1)
+        targetscore = score_user
         wicket_user = 3
         score_comp = 0
-        while wicket_user != 0:
+        while wicket_user != 0 and score_comp<=targetscore:
 
             bowler = int(input("what do u want to bowl?(input a number btw 0-6): "))
             batsman = random.randint(0,6)
@@ -43,7 +44,7 @@ if (toss == "even" and ((comp_toss+toss_toss)%2 == 0)) or (toss == "odd" and ((c
                 score_comp += batsman
                 print(f"Total score is {score_comp} and wickets remaining is {wicket_user}")
 
-        if wicket_user == 0 and wicket_comp == 0:
+        if targetscore > score_comp or wicket_user == 0:
 
             if score_comp > score_user:
                 print("You lost against computer")
@@ -71,6 +72,7 @@ if (toss == "even" and ((comp_toss+toss_toss)%2 == 0)) or (toss == "odd" and ((c
                 print(f"Total score is {score_comp} and wickets remaining is {wicket_user}") 
         
         print(f"Final score of first innings is {score_comp} and onto the next innings where target is", score_comp +1)
+        targetscore = score_comp
 
          # user is batting 
 
@@ -78,7 +80,7 @@ if (toss == "even" and ((comp_toss+toss_toss)%2 == 0)) or (toss == "odd" and ((c
 
             wicket_comp = 3
             score_user = 0
-            while wicket_comp != 0:
+            while wicket_comp != 0 and score_user<= targetscore:
 
                 bowler = random.randint(0,6)
                 batsman = int(input("what do u want to bat?(input a number btw 0-6):"))
@@ -91,7 +93,7 @@ if (toss == "even" and ((comp_toss+toss_toss)%2 == 0)) or (toss == "odd" and ((c
                     score_user += batsman
                     print(f"Total score is {score_user} and wickets remaining is {wicket_comp}")
             
-            if wicket_user == 0 and wicket_comp == 0:
+            if targetscore > score_user or wicket_comp == 0:
 
                 if score_comp > score_user:
                     print("You lost against computer")
@@ -124,13 +126,14 @@ else:
                 print(f"Total score is {score_comp} and wickets remaining is {wickets_user}")
 
         print(f"Final score of first innings is {score_comp} and onto the next innings where target is", score_comp +1)
+        target = score_comp
 
         if wickets_user == 0:
             
             #comp is bowling
             score_user = 0
             wicket_comp = 3
-            while wicket_comp != 0:
+            while wicket_comp != 0 and score_user<=target:
 
                 batsman = int(input("what do u want to bat?(input a number btw 0-6): "))
                 bowler = random.randint(0,6)
@@ -144,7 +147,7 @@ else:
                     score_user += batsman
                     print(f"Total score is {score_user} and wickets remaining is {wicket_comp}")
                 
-            if wickets_user == 0 and wicket_comp == 0:
+            if target > score_comp or wicket_comp == 0:
 
                 if score_comp > score_user:
                     print("You lost against computer")
@@ -158,6 +161,7 @@ else:
 
         while wicket_comp != 0:
             bowler = random.randint(0,6)
+
             batsman = int(input("what do u want to bat?(input a number btw 0-6):"))
 
             if batsman == bowler:
@@ -169,9 +173,10 @@ else:
                 print(f"Total score is {score_user} and wickets remaining is {wicket_comp}")
 
         print(f"Final score of first innings is {score_user} and onto the next innings where target is", score_user +1)
+        target = score_user
         wicket_user = 3
         score_comp = 0
-        while wicket_user != 0:
+        while wicket_user != 0 and score_comp<=target:
 
             bowler = int(input("what do u want to bowl?(input a number btw 0-6): "))
             batsman = random.randint(0,6)
@@ -184,7 +189,7 @@ else:
                 score_comp += batsman
                 print(f"Total score is {score_comp} and wickets remaining is {wicket_user}")
 
-        if wicket_user == 0 and wicket_comp == 0:
+        if target > score_comp or wicket_user == 0:
 
             if score_comp > score_user:
                 print("You lost against computer")
