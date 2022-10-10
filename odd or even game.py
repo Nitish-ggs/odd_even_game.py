@@ -44,9 +44,9 @@ if (toss == "even" and ((comp_toss+toss_toss)%2 == 0)) or (toss == "odd" and ((c
                 score_comp += batsman
                 print(f"Total score is {score_comp} and wickets remaining is {wicket_user}")
 
-        if targetscore > score_comp or wicket_user == 0:
+        if targetscore > score_comp or wicket_user or targetscore < score_comp == 0:
 
-            if score_comp > score_user:
+            if score_comp > score_user or targetscore < score_comp:
                 print("You lost against computer")
 
             else:
@@ -93,7 +93,7 @@ if (toss == "even" and ((comp_toss+toss_toss)%2 == 0)) or (toss == "odd" and ((c
                     score_user += batsman
                     print(f"Total score is {score_user} and wickets remaining is {wicket_comp}")
             
-            if targetscore > score_user or wicket_comp == 0:
+            if targetscore > score_user or wicket_comp or targetscore < score_user== 0:
 
                 if score_comp > score_user:
                     print("You lost against computer")
@@ -147,7 +147,7 @@ else:
                     score_user += batsman
                     print(f"Total score is {score_user} and wickets remaining is {wicket_comp}")
                 
-            if target > score_comp or wicket_comp == 0:
+            if target > score_comp or wicket_comp or target < score_comp == 0:
 
                 if score_comp > score_user:
                     print("You lost against computer")
@@ -189,7 +189,7 @@ else:
                 score_comp += batsman
                 print(f"Total score is {score_comp} and wickets remaining is {wicket_user}")
 
-        if target > score_comp or wicket_user == 0:
+        if target > score_comp or wicket_user or target < score_comp == 0:
 
             if score_comp > score_user:
                 print("You lost against computer")
